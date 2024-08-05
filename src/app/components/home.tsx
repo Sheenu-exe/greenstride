@@ -67,7 +67,7 @@ function Home(): JSX.Element {
     if (originRef.current) originRef.current.value = '';
     if (destinationRef.current) destinationRef.current.value = '';
   }, []);
-
+  const durationNumber = parseFloat(distance);
   return (
     <div className="min-h-screen w-full flex items-center flex-col mx-auto animate-fadeIn bg-[#030308] text-[#b0b0cc] overflow-hidden relative">
       {/* Animated background */}
@@ -245,6 +245,14 @@ function Home(): JSX.Element {
                   <div className="flex items-center">
                     <IoMdTimer className="text-[#7b68ee] mr-3" />
                     <div className="bg-transparent outline-none text-base text-[#b0b0cc] placeholder-[#4040a0] w-full" >{duration}</div>
+                  </div>
+                </div>
+                <div className="bg-[#1a1a3a] bg-opacity-50 rounded-xl p-4 transition-all duration-300 focus-within:shadow-lg focus-within:shadow-[#7b68ee]/20 group">
+                  
+                  <label className="text-sm text-[#6060a0] mb-1 block group-focus-within:text-[#7b68ee]">Tokens</label>
+                  <div className="flex items-center">
+                    <IoMdTimer className="text-[#7b68ee] mr-3" />
+                    <div className="bg-transparent outline-none text-base text-[#b0b0cc] placeholder-[#4040a0] w-full" >{durationNumber * 10}</div>
                   </div>
                 </div>
                 <div className="bg-[#1a1a3a] bg-opacity-50 rounded-xl p-4 transition-all duration-300 focus-within:shadow-lg focus-within:shadow-[#7b68ee]/20">
